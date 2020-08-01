@@ -2,8 +2,6 @@ const IOData = require('./IOData.js');
 
 const data = IOData.readJson('01_AREA_STRADALE');
 
-console.log(data.features.length);
-
 const dataClean = {
 	type: 'FeatureCollection',
 	features: [],
@@ -20,8 +18,4 @@ dataClean.features = data.features.map((d) => ({
 	},
 }));
 
-console.log(dataClean.features.length);
-
 IOData.saveJson(dataClean, 'cleanData');
-
-console.log(dataClean);
